@@ -6,12 +6,12 @@ module EnigmaRuby
     def initialize(rotor_settings = [])
       initialize_rotors(rotor_settings)
       @commands = [
-        SwapPlugboardCommand.new,
-        EncodeRotorForwardCommand.new(@rotors),
-        ReflectCommand.new,
-        EncodeRotorBackwardCommand.new(@rotors),
-        SwapPlugboardCommand.new,
-        AdvanceRotorsCommand.new(@rotors)
+        Commands::SwapPlugboard.new,
+        Commands::EncodeRotorForward.new(@rotors),
+        Commands::Reflect.new,
+        Commands::EncodeRotorBackward.new(@rotors),
+        Commands::SwapPlugboard.new,
+        Commands::AdvanceRotors.new(@rotors)
       ]
     end
 
