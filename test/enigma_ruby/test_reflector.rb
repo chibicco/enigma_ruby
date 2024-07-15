@@ -11,7 +11,7 @@ module EnigmaRuby
     def test_reflect_full_alphabet
       alphabet = ('A'..'Z').to_a
       reflected = alphabet.map { |char| EnigmaRuby::Reflector.reflect(char) }
-      expected = EnigmaRuby::Reflector::WIRING.chars
+      expected = EnigmaRuby::Reflector::WIRING['ORIGIN'].chars
       assert_equal expected, reflected
     end
   end
